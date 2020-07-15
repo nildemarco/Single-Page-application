@@ -12,4 +12,12 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  searchHero(data: string) {
+    console.log(data)
+  };
+
+  onSubmit(e: Event) {
+    e.preventDefault();
+  }
+
 }

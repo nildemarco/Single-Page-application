@@ -59,10 +59,13 @@ export class HeroesService {
   ];
 
   constructor() {
-    console.log('El servicio esta funcionando')
   }
 
   getHeroes(): HEROE[] {
     return this.heroes
+  }
+
+  getHero(idx: string) {
+    return this.heroes[idx];
   }
 }
