@@ -62,10 +62,25 @@ export class HeroesService {
   }
 
   getHeroes(): HEROE[] {
-    return this.heroes
+    return this.heroes;
   }
 
   getHero(idx: string) {
     return this.heroes[idx];
+  }
+
+  searchHero(data: string): HEROE[] {
+    let heroesArr: HEROE[] = [];
+    data = data.toLowerCase();
+
+    for(const hero of this.heroes) {
+      const name = hero.nombre.toLowerCase();
+
+      if(name.indexOf(data) >= 0 ) {
+        heroesArr.push(hero);
+      }
+    }
+
+    return heroesArr;
   }
 }
