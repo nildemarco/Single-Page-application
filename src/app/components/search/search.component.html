@@ -1,4 +1,13 @@
 <h2>Busqueda:  {{termino}}</h2>
+
+<div class="row animated fadeIn fast" *ngIf="heroes.length === 0">
+    <div class="col-12">
+        <div class="alert alert-info" role="alert">
+            No existen resultados para la busqueda: {{termino}}
+        </div>
+
+    </div>
+</div>
 <div class="card-columns">
     <div class="card animated fadeIn fast" *ngFor="let hero of heroes; let i = index">
         <img [src]="hero.img" class="card-img-top" [alt]="hero.nombre">
